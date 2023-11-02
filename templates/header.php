@@ -23,6 +23,12 @@
 
 </head>
 <body>
+
+
+
+
+
+
   <div id="rq-circle-loader-wrapper">
     <div id="rq-circle-loader-center">
       <div class="rq-circle-load">
