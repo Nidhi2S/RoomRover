@@ -3,6 +3,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     let email = document.getElementById('email_id').value;
     let contact = document.getElementById('contact_id').value;
     let property = document.getElementById('property_id').value;
+    // console.log(document.getElementById('property_id').value);
     let password = document.getElementById('password_id').value;
     let confirm_password = document.getElementById('confirm_password_id').value;
 
@@ -10,36 +11,69 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 
     if (name.trim() === '') {
         valid = false;
-        alert('Name is required.');
+        document.getElementById('name_error').textContent = 'Name is required.';
     }
 
     if (property.trim() === '') {
         valid = false;
-        alert('Property is required.');
+        document.getElementById('property_error').textContent = 'Property is required.';
+    }
+    if (email.trim() === '') {
+        valid = false;
+        document.getElementById('email_error').textContent = 'Email is required.';
+    }
+    else if (!validateEmail(email)) {
+        valid = false;
+        document.getElementById('email_error').textContent = 'Invalid email format.';
     }
 
-    if (email.trim() === '' || !validateEmail(email)) {
+    if (contact.trim() === '') {
         valid = false;
-        alert('Invalid email format.');
+        document.getElementById('contact_error').textContent = 'Contact is required.';
+    }
+    else if (!validateContact(contact)) {
+        valid = false;
+        document.getElementById('contact_error').textContent = 'Invalid contact number format.';
     }
 
-    if (contact.trim() === '' || !validateContact(contact)) {
+
+    if (password.trim() === '') {
         valid = false;
-        alert('Invalid contact number format.');
+        document.getElementById('password_error').textContent = 'Password is required.';
+    }
+    else if (!validatePassword(password)) {
+        valid = false;
+        document.getElementById('password_error').textContent = 'Invalid password format.';
     }
 
-    if (password.trim() === '' || !validatePassword(password)) {
+    if (confirm_password.trim() === '') {
         valid = false;
-        alert('Invalid password format.');
+        document.getElementById('confirm_password_error').textContent = 'Password is required.';
     }
-
-    if (confirm_password.trim() === '' || confirm_password !== password) {
+    else if (confirm_password !== password) {
         valid = false;
-        alert('Passwords do not match.');
+        document.getElementById('confirm_password_error').textContent = 'Passwords do not match.';
     }
 
     if (!valid) {
         event.preventDefault();
+    }
+
+    if (valid) {
+        let formData = new FormData(this); // Create a FormData object from the form
+
+        fetch('http://localhost:8000/src/view/business_signup.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json()) // Assuming the server returns JSON
+            .then(data => {
+                // Handle the response from the server
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
 });
 

@@ -38,7 +38,8 @@
         </div>
         <section id="our-team">
           <!-- <h2 class="text-center">Our TEam</h2> -->
-          <a href="http://localhost:8000/src/view/business_signup.php" style="font-size: 50px; text-align: center;">Register Your Property</a>
+          <a href="http://localhost:8000/src/view/business_signup.php" style="font-size: 50px; border: 2px solid darkblue;" class="border border-primary">Register Your Property</a><br>
+          <a href="http://localhost:8000/src/view/business_login.php" style="font-size: large;"><b>already registred? please login</b></a>
           <div class="row">
             <div class="rq-team-member col-md-4 col-sm-4 col-xs-12">
               <div class="thumbnail view second-effect">
