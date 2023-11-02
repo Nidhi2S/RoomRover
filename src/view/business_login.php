@@ -5,7 +5,7 @@
     <div class='rq-side-menu-widget-wrap' style='display: flex; justify-content:center;'>
         <div class='rq-login-form-wrapper'>
             <h3 style='text-align: center;'>Login</h3><br>
-            <form action='http://localhost/php/tour_and_travels/src/controller/business_signup_controller.php' method='POST' id='registrationForm'>
+            <form action='http://localhost:8000/src/controller/business_login_controller.php' method='POST' id='registrationForm'>
                 <!-- EMAIL -->
                 <input class='form-control' style='width:100%' type='text' name='email' id='email_id' placeholder='Email'>
                 <div class="text-danger" id="email_error" ></div><br>                
@@ -14,7 +14,7 @@
                 <div class="text-danger" id="password_error" ></div><br>
                 <button class='btn btn-outline-secondary' type='submit'>Login</button>
             </form>
-            <script src='../../assets/js/business_signup.js'></script>
+            <!-- <script src='../../assets/js/business_signup.js'></script> -->
         </div>
     </div>
 </div>

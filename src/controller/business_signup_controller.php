@@ -50,15 +50,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo 'This email is already registered.';
         } else {
             $result = $model->client_signup($name, $property, $email, $contact_number, $hashed_password);
-            var_dump($result);
+            // var_dump($result);
             if ($result) {
-                echo 'Sign in successful.';
+                echo 'Sign up successful.';
             } else {
-                echo 'Sign in failed.';
+                echo 'Sign up failed.';
                 header('Location: ../../src/view/client_signup.php');
             }
         }
     }
 }
 ?>
-<!-- Your HTML Form Goes Here -->
+
