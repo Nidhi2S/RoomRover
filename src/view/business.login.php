@@ -21,7 +21,14 @@
                 <button class='btn btn-outline-secondary' type='submit'>Sign Up</button>
             </form>
             <!-- JavaScript File -->
-            <script src='../../assets/js/business_signup.js'></script>
+            <script>
+                document.getElementById('toggle-password').addEventListener('click', function() {
+                    const passwordInput = document.getElementById('bpassword');
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    this.innerHTML = type === 'password' ? '&#128065;' : '&#128064;';
+                });
+            </script>
         </div>
     </div>
 </div>

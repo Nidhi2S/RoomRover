@@ -30,19 +30,13 @@
                 <!-- PASSWORD -->
                 <input class='form-control' style='width:100%' type='password' name='password' id='password_id' placeholder='Password'>
                 <div class="text-danger" id="password_error"></div>
-                <!-- REMEMBER ME -->
-                <label for="rememberme">
-                    <input type="checkbox" name="remember_me" class="rememberme" style="width: 15px; height: 15px; color: white; margin: 0; margin-right: 5px; outline: none;" <?php if (isset($_COOKIE['email']) && isset($_COOKIE['password'])) { ?>checked <?php }; ?>> Remember me
-                </label>
                 <!-- EYE BUTTON -->
                 <span class="input-group-text" id="password-addon"><i class="fas fa-eye" id="password_eye" onclick="togglePassword('password_id', 'password_eye')"></i></span><br>
-
-
                 <!-- CONFIRM PASSWORD -->
                 <input class='form-control' style='width:100%' type='password' name='confirm_password' id='confirm_password_id' placeholder='Confirm Password'>
                 <div class="text-danger" id="confirm_password_error"></div>
                 <span class="input-group-text" id="confirm-password-addon"><i class="fas fa-eye" id="confirm_password_eye" onclick="togglePassword('confirm_password_id', 'confirm_password_eye')"></i></span><br>
-
+                <!-- BUTTON -->
                 <button class='btn btn-outline-secondary' type='submit'>Sign Up</button>
             </form>
             <!-- <script src='../../assets/js/business_signup.js'></script> -->

@@ -66,9 +66,20 @@ class model
         try {
             global $conn;
             $query = "UPDATE `hotel`SET `property_name` = '$property_name',`booking_year` = $booking_year,`hotel_phone` = '$contact_number',`hotel_email` = '$hotel_email',`rooms_available` = '$room_availabile',`check_in` = '$check_in_time',`check_out` = '$check_out_time',`cancellation_policy` = '$cancellation_policy'  where id = $client_id ";
-            var_dump($client_id);
             $execute = mysqli_query($conn, $query);
             return $execute;
+        } catch (Exception $e) {
+            echo $e;
+        }
+    }
+    //HOTEL ADDRESS INSERTION
+    function hotel_address_insertion($locality, $pincode, $country, $state, $city)
+    {
+        try {
+            global $conn;
+            $query = "INSERT INTO `hotel_address`(`locality`, `pin_code`, `city`, `state`) 
+            VALUES ('$locality', '$pincode', '$country','$city', '$state')";
+            $execute = mysqli_query($conn, $query);
         } catch (Exception $e) {
             echo $e;
         }

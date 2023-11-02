@@ -46,23 +46,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // CANCELLATION POLICY
     if (empty($cancellation_policy)) {
         echo "Cancellation policy is required.";
+    }
+    // Proceed with database insertion
+    $model = new model();
+    if (isset($_POST['hotel_id']) && !empty($_POST['hotel_id'])) {
+        $updation_result = $model->hotel_info_update($property_name, $booking_year, $contact_number, $hotel_email, $room_availabile, $check_in_time, $check_out_time, $cancellation_policy, $client_id);
+        if ($updation_result) {
+            echo "updated succesfully";
+            header('Location: ../view/hotel_address.php');
+        } else {
+            echo "try again";
+        }
     } else {
-        // Proceed with database insertion
-        $model = new model();
         $result = $model->hotel_info($property_name, $booking_year, $contact_number, $hotel_email, $room_availabile, $check_in_time, $check_out_time, $cancellation_policy, $client_id);
         if ($result) {
             echo 'basic info entred';
-            // header('Location: ../view/business_login.php');
+            header('Location: ../view/hotel_address.php');
         } else {
             echo 'Try again';
             // header('Location: ../../src/view/client_signup.php');
         }
-        $model = new model();
-        $updation_result = $model->hotel_info_update($property_name, $booking_year, $contact_number, $hotel_email, $room_availabile, $check_in_time, $check_out_time, $cancellation_policy, $client_id);
-        if ($updation_result) {
-            echo "updated succesfully";
-        } else {
-            echo "try again";
-        }
     }
 }
+?>
+<a href=""></a>
