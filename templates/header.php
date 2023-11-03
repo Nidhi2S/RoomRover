@@ -48,7 +48,7 @@
                  
                     <p>Login to add new listing </p>
 
-                    <?php require "/var/www/html/php/tour_and_travels/src/view/sign_up.php" ?>
+                    <?php require "/var/www/html/php/RoomRover/src/view/sign_up.php" ?>
 
                     <div class="rq-social-login-opt">
                         <a href="#" class="rq-social-login-btn rq-facebook-login">Login with Facebook</a>
