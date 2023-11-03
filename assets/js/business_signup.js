@@ -28,13 +28,22 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     }
 
     if (contact.trim() === '') {
+
         valid = false;
         document.getElementById('contact_error').textContent = 'Contact is required.';
     }
     else if (!validateContact(contact)) {
         valid = false;
         document.getElementById('contact_error').textContent = 'Invalid contact number format.';
+
+
     }
+    else if (!validateContact(contact)) {
+        valid = false;
+        document.getElementById('contact_error').textContent = 'Invalid contact number format.';
+    }
+
+
 
 
     if (password.trim() === '') {
@@ -43,6 +52,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     }
     else if (!validatePassword(password)) {
         valid = false;
+
         document.getElementById('password_error').textContent = 'Invalid password format.';
     }
 
@@ -53,6 +63,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     else if (confirm_password !== password) {
         valid = false;
         document.getElementById('confirm_password_error').textContent = 'Passwords do not match.';
+
     }
 
 
@@ -90,6 +101,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         // Regular expression for contact number validation
         let contactPattern = /^\d{10}$/;
         return contactPattern.test(contact);
+
     }
 
     function validatePassword(password) {
@@ -97,6 +109,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         return passwordPattern.test(password);
     }
+
 
 });
 
