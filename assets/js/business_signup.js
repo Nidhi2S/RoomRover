@@ -59,22 +59,23 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         event.preventDefault();
     }
 
-    if (valid) {
-        let formData = new FormData(this); // Create a FormData object from the form
+    // if (valid) {
+    //     let formData = new FormData(this); // Create a FormData object from the form
 
-        fetch('http://localhost:8000/src/view/business_signup.php', {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => response.json()) // Assuming the server returns JSON
-            .then(data => {
-                // Handle the response from the server
-                console.log(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }
+    //     fetch("http://localhost:8000/src/view/business_signup_.php", {
+    //         method: 'POST',
+    //         body: formData
+    //     })
+    //         .then(response => response.json()) // Assuming the server returns JSON
+    //         .then(data => {
+    //             // Handle the response from the server
+    //             console.log(data);
+    //             // window.location.href('')
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //         });
+    // }
 });
 
 function validateEmail(email) {
@@ -95,3 +96,15 @@ function validatePassword(password) {
     return passwordPattern.test(password);
 }
 // ----------------------------------------------for eye button ----------------------------------------------------------------------------------------------------------------
+function togglePassword(inputId) {
+    const inputElement = document.getElementById(inputId);
+    const eyeElement = document.getElementById(inputId + '_eye');
+
+    if (inputElement.type === 'password') {
+        inputElement.type = 'text';
+        eyeElement.innerHTML = '👁️';
+    } else {
+        inputElement.type = 'password';
+        eyeElement.innerHTML = '👁️';
+    }
+}

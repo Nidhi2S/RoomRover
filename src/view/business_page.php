@@ -1,5 +1,4 @@
 
-  
     <div class="rq-checkout-banner">
       <div class="rq-checkout-banner-mask">
         <div class="container">

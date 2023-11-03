@@ -53,12 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // var_dump($result);
             if ($result) {
                 echo 'Sign up successful.';
+                header('Location: ../view/business_login.php');
             } else {
                 echo 'Sign up failed.';
-                header('Location: ../../src/view/client_signup.php');
+                // header('Location: ../../src/view/client_signup.php');
             }
         }
     }
 }
 ?>
-
