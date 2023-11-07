@@ -66,12 +66,17 @@ class model
         try {
             global $conn;
             $query = "UPDATE `hotel`SET `property_name` = '$property_name',`booking_year` = $booking_year,`hotel_phone` = '$contact_number',`hotel_email` = '$hotel_email',`rooms_available` = '$room_availabile',`check_in` = '$check_in_time',`check_out` = '$check_out_time',`cancellation_policy` = '$cancellation_policy'  where id = $client_id ";
+<<<<<<< HEAD
+=======
+            var_dump($client_id);
+>>>>>>> a6e148d (client login and hotel register)
             $execute = mysqli_query($conn, $query);
             return $execute;
         } catch (Exception $e) {
             echo $e;
         }
     }
+<<<<<<< HEAD
     //HOTEL ADDRESS INSERTION
     function hotel_address_insertion($locality, $pincode, $country, $state, $city)
     {
@@ -84,4 +89,6 @@ class model
             echo $e;
         }
     }
+=======
+>>>>>>> a6e148d (client login and hotel register)
 }

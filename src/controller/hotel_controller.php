@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // CANCELLATION POLICY
     if (empty($cancellation_policy)) {
         echo "Cancellation policy is required.";
+<<<<<<< HEAD
     }
     // Proceed with database insertion
     $model = new model();
@@ -62,11 +63,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($result) {
             echo 'basic info entred';
             header('Location: ../view/hotel_address.php');
+=======
+    } else {
+        // Proceed with database insertion
+        $model = new model();
+        $result = $model->hotel_info($property_name, $booking_year, $contact_number, $hotel_email, $room_availabile, $check_in_time, $check_out_time, $cancellation_policy, $client_id);
+        if ($result) {
+            echo 'basic info entred';
+            // header('Location: ../view/business_login.php');
+>>>>>>> a6e148d (client login and hotel register)
         } else {
             echo 'Try again';
             // header('Location: ../../src/view/client_signup.php');
         }
+<<<<<<< HEAD
     }
 }
 ?>
 <a href=""></a>
+=======
+        $model = new model();
+        $updation_result = $model->hotel_info_update($property_name, $booking_year, $contact_number, $hotel_email, $room_availabile, $check_in_time, $check_out_time, $cancellation_policy, $client_id);
+        if ($updation_result) {
+            echo "updated succesfully";
+        } else {
+            echo "try again";
+        }
+    }
+}
+>>>>>>> a6e148d (client login and hotel register)
