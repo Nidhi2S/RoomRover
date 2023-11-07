@@ -48,6 +48,10 @@
         </div>
     </footer>
 
+
+
+    
+
   <!-- Latest jQuery plugin-->
   <!-- Latest compiled and minified JavaScript for bootstrap-->
   <script src="http://localhost:8000/assets/js/main.js"></script>
